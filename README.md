@@ -117,7 +117,7 @@ plt.tight_layout()
 plt.show()
 ```
 ### Results
-![Top 5 Aiports as the Trips Destionation and Origin in the US (2022)](Images/airline_flight_status.png)
+![Top 5 Aiports as the Trips Destionation and Origin in the US (2022)](Images/top_5_airports_in_2022.png)
 
 *Bar graphs visualizing top 5 most popular trip origin and destination based on the count of trips.*
 
