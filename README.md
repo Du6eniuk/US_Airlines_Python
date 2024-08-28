@@ -777,7 +777,7 @@ This project came with several challenges that provided valuable learning experi
 
 # Conclusion
 
-This exploration into the US airline industry has been highly insightful, revealing the key patterns and trends that influence this dynamic sector. The analysis has deepened my understanding of the factors that affect flight performance, such as delays and cancellations, and offers valuable insights for improving operational efficiency. As the aviation industry continues to evolve, continuous analysis will be crucial for staying informed and competitive. This project lays a strong foundation for future research, emphasizing the need for ongoing learning and adaptation in the rapidly changing landscape of air travel. I already have so many ideas how to imrove this project and visualizations that I use. You can learn about some of them inside my main file - [Project_Airline](Project_Airline.ipynb).
+This exploration into the US airline industry has been highly insightful, revealing the key patterns and trends that influence this dynamic sector. The analysis has deepened my understanding of the factors that affect flight performance, such as delays and cancellations, and offers valuable insights for improving operational efficiency. As the aviation industry continues to evolve, continuous analysis will be crucial for staying informed and competitive. This project lays a strong foundation for future research, emphasizing the need for ongoing learning and adaptation in the rapidly changing landscape of air travel. I already have so many ideas how to improve this project and the visualizations that I want to use. You can learn about some of them inside my main file - [Project_Airline](Project_Airline.ipynb). And finally, if you want to minimize the risk associated with your flight - pick an October flight at 5 a.m. through Delta...
 
 ## P.S. Step Back
 
@@ -787,9 +787,9 @@ Here’s a quick analysis and a graph that illustrate why this dataset was probl
 
 This discovery led me to switch to a more reliable dataset for the project. Ensuring the accuracy of the data is crucial for drawing meaningful conclusions, and this experience reinforced the importance of data validation in any analysis.
 
-### Analysis on The "Fake" Data
+### Analysis of The "Fake" Data
 
-I am not going to go in details here since I have already spend a lot of time analysing this "fake" dataset when I started working on this project >:|
+I am not going to go into details here since I have already spent a lot of time analysing this "fake" dataset when I started working on this project >:|
 
 ```python
 # Load Data
