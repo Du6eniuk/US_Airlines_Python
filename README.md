@@ -5,7 +5,7 @@ The data was sourced from a publicly available dataset on [Kaggle.com](https://w
 
 # The Questions
 
-These are the quiestion I answer in my project:
+These are the questions I answer in my project:
 
 1. Which airports are the most popular based on airline traffic, and how does this change month by month?
 2. What are the largest operating and marketing airlines, and how do these numbers vary between short and long flights?
@@ -16,7 +16,7 @@ These are the quiestion I answer in my project:
 
 # Tools I Used
 
-For this particular project I have utilized:
+For this particular project, I have utilized:
 
 - **Python:** The core of this analysis, enabling deep data exploration and insight generation through various libraries:
     - **Pandas Library:** For data manipulation and analysis.
@@ -24,7 +24,7 @@ For this particular project I have utilized:
     - **Seaborn Library:** For producing advanced and aesthetically pleasing visualizations.
 - **Jupyter Notebooks:** Used for running Python scripts and documenting the analysis process.
 - **Visual Studio Code:** My preferred environment for writing and executing Python code.
-- **Git & GitHub:** Employed for version control and sharing the project, facilitating collaboration and tracking progress.
+- **Git & GitHub:** Employed for version control and sharing the project, facilitating collaboration, and tracking progress.
 
 # Data Preparation and Cleanup
 
@@ -32,7 +32,7 @@ This section outlines the steps taken to prepare the data for analysis.
 
 ## Import & Clean Up Data
 
-First, I imported the necessary libraries and loaded the dataset. Following this, I conducted initial data cleaning tasks to optimize resource usage. This involved retaining only the essential columns needed for the analysis, ensuring a more efficient and focused approach to data exploration.
+First, I imported the necessary libraries and loaded the dataset. Following this, I conducted initial data-cleaning tasks to optimize resource usage. This involved retaining only the essential columns needed for the analysis, ensuring a more efficient and focused approach to data exploration.
 
 ```python
 # Importing Libraries
@@ -138,7 +138,7 @@ df_2022['FL_DATE'] = pd.to_datetime(df_2022['FL_DATE'])
 # Getting Month in a Correct String Format
 df_2022['FL_MONTH_SHORT'] = df_2022['FL_DATE'].dt.strftime('%b')
 
-# Creating Filter Based on Top 5 Aiports
+# Creating Filter Based on Top 5 Airports
 top_5_airports_list_ORIGIN = list(df_2022.groupby('ORIGIN').size().sort_values(ascending=False).head(5).index)
 # Creating Second List is Kind of Extra Since They are The Same
 top_5_airports_list_DEST = list(df_2022.groupby('DEST').size().sort_values(ascending=False).head(5).index)
@@ -192,7 +192,7 @@ plt.title('Top 5 Airports by Number of Flights in the US (2022)', fontsize = 14)
 plt.ylabel('')
 plt.xlabel('')
 
-palette = sns.color_palette('deep') # We can access each color that seaborn uses for values and then assign it to the list. Now we can use indexes to get the same color for values as our lines are using.
+palette = sns.color_palette('deep') # We can access each color that Seaborn uses for values and then assign it to the list. Now we can use indexes to get the same color for values as our lines are using.
 colors = {
 'ORD (Chicago)': palette[0],
 'DFW (Dallas)': palette[1],
@@ -202,8 +202,8 @@ colors = {
 }
 
 # Mapping Month to Index
-month_to_index = {month: i for i, month in enumerate(df_2022_to_plot['FL_MONTH_SHORT'].unique())} # we basically required this part of the code to be able to adjust our x-value
-# since FL_MONTH is non numerical value we mapped each month to its respective index, number we can now manipulate. Chat GPT helped me to code it. 
+month_to_index = {month: i for i, month in enumerate(df_2022_to_plot['FL_MONTH_SHORT'].unique())} # We required this part of the code to be able to adjust our x-value
+# Since FL_MONTH is a non-numerical value we mapped each month to its respective index, the numbers we can now manipulate. Chat GPT helped me to code it. 
 
 # Plotting Each Airport to Its respective position
 for airport in df_2022_to_plot['airport_full_name'].unique():
@@ -241,7 +241,7 @@ offset_min_x = {
 'ATL (Atlanta)': -0.5
 }
 
-# this loop is used to plot min and max values with respect to self-defined offsets. 
+# This loop is used to plot min and max values with respect to self-defined offsets. 
 for airport in df_2022_to_plot['airport_full_name'].unique():
     # Filter data for the current airport
     airport_data = df_2022_to_plot[df_2022_to_plot['airport_full_name'] == airport]
@@ -266,7 +266,7 @@ plt.tight_layout()
 plt.show()
 ```
 ### Results
-![Top 5 Aiports Based on Count of Flights by Month](Images\top_5_airports_month_2022.png)
+![Top 5 Airports Based on Count of Flights by Month](Images\top_5_airports_month_2022.png)
 
 *Line graph visualizing the top 5 most popular airports based on a month.*
 
@@ -277,7 +277,7 @@ plt.show()
 - Notably, Atlanta's airport reaches an impressive capacity, handling up to 55,000 flights in a single month at its peak.
 - This analysis suggests that airports may require a larger workforce during the summer to manage the increased traffic, while in the winter, a reduced number of staff might suffice.
 
-## 2. What are the biggest operation and marketing airlines and how this value changes based on the flight being short of long?
+## 2. What are the biggest operation and marketing airlines and how this value changes based on the flight being short or long?
 
 To grasp the following analysis, it’s essential to understand that each flight involves two types of carriers: the marketing carrier, which is the airline selling the flight, and the operating carrier, which is the airline actually operating the flight. These are represented by the MKT_AIRLINE and OP_AIRLINE columns, respectively. While they can be the same, they often differ.
 
@@ -420,11 +420,11 @@ plt.show()
 - Alaska Airlines has a unique profile compared to other airlines, with a significant proportion (around 43%) of its flights being long flights (>120 min). This likely reflects Alaska’s strategic focus on longer domestic routes, possibly due to its geographic base and the locations it primarily serves.
 - SkyWest Airlines, predominantly operating as a regional airline, has an overwhelming majority of its flights categorized as short flights (approximately 88%). This highlights its role in operating shorter, regional routes as a partner to major airlines like United and Delta. In addition, SkyWest Airlines appears prominently as an operating carrier but is absent from the top marketing carriers. This highlights SkyWest’s role as a regional operator, primarily operating flights on behalf of other major airlines. It’s a clear example of how some airlines focus more on operational roles rather than marketing their own brand.
 - Marketing vs. Operating Dynamics: The differences between the two graphs illustrate the varied roles airlines play in the market. Some airlines like United and Delta not only market flights but also operate a significant number of them, while others like SkyWest are more focused on operations, often under contract with the larger airlines.
-- Note: In case you want to see the biggest airline based on number of trips, there is a version without type of flights in the main project.
+- Note: In case you want to see the biggest airline based on a number of trips, there is a version without the type of flights in the main project.
 
 ## 3. Which aircraft are the most commonly used, and what is the average age of these machines?
 
-First Graph: We utilize sns.displot, which takes a column from our dataset and automatically generates a distribution plot. Afterward, we enhance the visualization by adding lines based on our calculated statistics.
+First Graph: We utilize sns.displot, which takes a column from our dataset and automatically generates a distribution plot. Afterward, we enhanced the visualization by adding lines based on our calculated statistics.
 
 Second Graph: To prepare this, we first need to remove any duplicates based on the TAIL_NUM column, which represents the FAA N-Number/Registration — a unique identifier for each aircraft. Once the data is cleaned, we can group and count the relevant values to generate our insight
 
@@ -574,7 +574,7 @@ def success_category(row):
     else:
         return 'Minor or No Delay'
 
-# Applying self-defined function
+# Applying the self-defined function
 pd_merged['SUCCESS_CATEGORY'] = pd_merged.apply(success_category, axis=1)
 
 # Grouping, creating a List, and fitlering
@@ -632,7 +632,7 @@ plt.show()
 
 - High Reliability Across Airlines: The majority of flights for all four airlines, Delta Air Lines, United Air Lines, American Airlines, and Southwest Airlines, experienced minor or no delays. Delta Air Lines leads with 88.2% of its flights in this category, indicating strong operational reliability.
 - Moderate Delays Vary: The percentage of flights delayed by more than 30 minutes shows some variation among airlines. Southwest Airlines has the highest percentage in this category at 15.5%, suggesting potential challenges in on-time performance.
-- High On-Time Performance: After additional research, the data reveals that Hawaiian Airlines leads with 90.47% of its flights experiencing minor or no delay, followed closely by Alaska Airlines and Delta Air Lines at 88.45% and 88.15%, respectively. This indicates strong on-time performance and reliability for these airlines in 2022. Therefore, if you want to avoid being late at all cost choose these airlines when possible.
+- High On-Time Performance: After additional research, the data reveals that Hawaiian Airlines leads with 90.47% of its flights experiencing minor or no delay, followed closely by Alaska Airlines and Delta Air Lines at 88.45% and 88.15%, respectively. This indicates strong on-time performance and reliability for these airlines in 2022. Therefore, if you want to avoid being late at all costs choose these airlines when possible.
 
 ## 6. What time of day and year offers the lowest risk of flight cancellations or delays?
 
@@ -662,7 +662,7 @@ df_merged_cancellation['PERCENT'] = round(df_merged_cancellation['SPLIT'] / df_m
 # Avoiding Minor or No Delay flights
 df_merged_cancellation = df_merged_cancellation[df_merged_cancellation['SUCCESS_CATEGORY'] != 'Minor or No Delay']
 
-# Repeating same groupings for months (Second graph)
+# Repeating the same groupings for months (Second graph)
 df_split_M = pd_merged.groupby(['FL_MONTH_SHORT','SUCCESS_CATEGORY']).size().reset_index(name = 'SPLIT')
 df_total_M = pd_merged.groupby('FL_MONTH_SHORT').size().reset_index(name = 'TOTAL')
 df_merged_cancellation_month = pd.merge(df_split_M,df_total_M)
@@ -740,7 +740,7 @@ plt.show()
 
 ![Patterns in US Flight Cancellations and Delays (2022)](Images\cancellation_and_delay.png)
 
-*Line charts visualizing patterns for cancelled and delayed flights based on hour of the day and month of the year.*
+*Line charts visualizing patterns for canceled and delayed flights based on the hour of the day and month of the year.*
 
 ### Insights:
 
