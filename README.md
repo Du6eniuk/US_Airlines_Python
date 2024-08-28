@@ -117,7 +117,7 @@ plt.tight_layout()
 plt.show()
 ```
 ### Results
-![Top 5 Aiports as the Trips Destionation and Origin in the US (2022)](US_Airlines_Python/Images/airline_flight_status.png)
+![Top 5 Aiports as the Trips Destionation and Origin in the US (2022)](Images/airline_flight_status.png)
 
 *Bar graphs visualizing top 5 most popular trip origin and destination based on the count of trips.*
 
@@ -266,7 +266,7 @@ plt.tight_layout()
 plt.show()
 ```
 ### Results
-![Top 5 Airports Based on Count of Flights by Month](Images\top_5_airports_month_2022.png)
+![Top 5 Airports Based on Count of Flights by Month](Images/top_5_airports_month_2022.png)
 
 *Line graph visualizing the top 5 most popular airports based on a month.*
 
@@ -409,7 +409,7 @@ for index, row in OP_airlines[OP_airlines['SHORT_OR_LONG'] == 'Long Flight'].ite
 plt.show()
 ```
 ### Results
-![Top 5 Airlines Based on Count of Flights Grouped by Type of Carrier and Type of Flight](Images\top_5_airlines.png)
+![Top 5 Airlines Based on Count of Flights Grouped by Type of Carrier and Type of Flight](Images/top_5_airlines.png)
 
 *Bar Graph visualizing the top 5 most popular airlines based on the type of carrier and type of flight. Sorted by the short flights in descending order.*
 
@@ -473,7 +473,7 @@ plt.show()
 ```
 ### Results Part I
 
-![Distribution of Aircraft Manufacture Years in the US (2022)](Images\hist_planes.png)
+![Distribution of Aircraft Manufacture Years in the US (2022)](Images/hist_planes.png)
 
 *Distribution of aircraft manufacture years along with median and mean.*
 
@@ -484,7 +484,7 @@ plt.show()
 - Recent Increase in Manufacturing: A rise in the number of aircraft manufactured post-2015 suggests a trend toward fleet modernization in recent years.
 
 ### Results Part II
-![Most Commonly Used Commercial Aircraft in the US (2022)](Images\bar_planes.png)
+![Most Commonly Used Commercial Aircraft in the US (2022)](Images/bar_planes.png)
 
 *The Bar Graph visualizes the top 10 most popular commercial aircraft along with the manufacturer.*
 
@@ -548,7 +548,7 @@ plt.show()
 
 ### Results
 
-![Distribution of Flight Cancellations by Cause in the US (2022))](Images\cancel_reason.png)
+![Distribution of Flight Cancellations by Cause in the US (2022))](Images/cancel_reason.png)
 
 *Pie Chart visualizing the distribution of flight cancellation causes in the US.*
 
@@ -624,7 +624,7 @@ plt.show()
 ```
 ### Results
 
-![Flight Status Distribution Across Major US Airlines (2022)](Images\airline_flight_status.png)
+![Flight Status Distribution Across Major US Airlines (2022)](Images/airline_flight_status.png)
 
 *Pie Charts visualizing flight status distribution across major US airlines.*
 
@@ -738,7 +738,7 @@ plt.show()
 ```
 ### Results
 
-![Patterns in US Flight Cancellations and Delays (2022)](Images\cancellation_and_delay.png)
+![Patterns in US Flight Cancellations and Delays (2022)](Images/cancellation_and_delay.png)
 
 *Line charts visualizing patterns for canceled and delayed flights based on the hour of the day and month of the year.*
 
@@ -846,7 +846,7 @@ plt.show()
 ```
 ### Results of The "Fake" Data
 
-![Visualization of Top Airports Based on The Fake Data](Images\fake_data.png)
+![Visualization of Top Airports Based on The Fake Data](Images/fake_data.png)
 
 As you can see, the five airports identified in this analysis do not correspond with the top five most popular airports in the US, as confirmed by a quick Google search. This discrepancy made it clear that the data was flawed. While I chose to leave this graph somewhat incomplete, I still decided to share it because I believe it's important to present all aspects of my project, even the less successful ones.
 
